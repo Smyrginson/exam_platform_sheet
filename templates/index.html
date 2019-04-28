@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome on exam platform</title>
+</head>
+<body>
+
+  {% if is_login %}
+    <div>
+        <form>
+            <input name="username" id="username" type="text">
+            <input name="password" id="password" type="password">
+
+        </form>
+    </div>
+  {% else %}
+    <h3>Welcome {{username}} in exam platform</h3>
+  {% endif %}
+
+ <h1>{{welcome_message}}</h1>
+</body>
+</html>
