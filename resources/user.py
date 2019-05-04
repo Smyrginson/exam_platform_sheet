@@ -43,7 +43,7 @@ class UserLogin(Resource):
         if not user:
             return {"message": f'{data.get("username")} doesn`t exist '}, 400
 
-        return {"message": "User dosn`t exist"}, 401
+        return {"message": "User does not exist"}, 401
 
     @classmethod
     def login(cls, username, password):

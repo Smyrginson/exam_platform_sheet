@@ -134,7 +134,7 @@ def remove_question(question_id):
 @login_required
 def examboard():
     user = UserModel.find_by_name(session['username'])
-    exams = ExamModel.find_others_courses(user)
+    exams = ExamModel.find_other_courses(user)
     return render_template('examboard.html', exams=exams, user=user)
 
 

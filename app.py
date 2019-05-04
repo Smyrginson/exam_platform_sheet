@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 def create_tables():
     db.create_all()
 
-from vievs.viev import *
+from views.view import *
 
 if __name__ == '__main__':
     db.init_app(app)

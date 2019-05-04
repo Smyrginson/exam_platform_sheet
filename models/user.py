@@ -32,8 +32,6 @@ class UserModel(db.Model):
     def get_exams(self):
         return self.exam
 
-
-
     def save_to_db(self) -> None:
         db.session.add(self)
         db.session.commit()

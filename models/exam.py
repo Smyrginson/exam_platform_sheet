@@ -23,7 +23,7 @@ class ExamModel(db.Model):
         return exam
 
     @classmethod
-    def find_others_courses(cls, _owner):
+    def find_other_courses(cls, _owner):
         return ExamModel.query.filter(ExamModel.owner_id != _owner.id)
 
     def count_user_points(self, user):
