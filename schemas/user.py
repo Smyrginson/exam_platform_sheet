@@ -1,4 +1,5 @@
-from app import ma
+from ma import ma
+
 from models.user import UserModel
 
 

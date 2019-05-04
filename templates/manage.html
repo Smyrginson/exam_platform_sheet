@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<h1>Manage exam sheets</h1>
+{% if exams %}
+<div class="container">
+    <h4>Exam list</h4>
+    <ul class="nav nav-pills nav-stacked">
+        {% for exam in exams %}
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{exam.exam_name}}
+                <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Rate</a></li>
+                <li><a href="/edit/{{exam.id}}">Edit</a></li>
+                <li><a href="/delete/{{exam.id}}">Delete</a></li>
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endblock %}

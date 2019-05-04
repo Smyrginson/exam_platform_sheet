@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    {% if session.username == NULL %}
+    <h1>Welcome on Exam Platform</h1>
+    <p class="lead">Create your exams and solut other exams</p>
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+    <h1>Welcome {{session.username}} <br> on Exam Platform</h1>
+    <p class="lead">Create your exams and solve other exams</p>
+      <a href="/solve" class="btn btn-primary btn-lg">Solve</a>
+      <a href="/rate" class="btn btn-success btn-lg">Rate</a>
+    {% endif %}
+  </div>
+{% endblock %}

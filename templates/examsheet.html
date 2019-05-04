@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<h1>Solve the exam {{exam.exam_name}}</h1>
+{% if exam %}
+<script>
+$(function () {
+    $('button').on('click', function () {
+        var item = $(this).attr('name');
+        var value = $(this).val();
+        $("input[name='"+item+"']").val(value);
+    });
+});
+</script>
+<h3>Good luck !</h3>
+<form class="form-horizontal" method="POST" action="">
+    <div class="container">
+        {% set counter = 1 %}
+        {% for question in questions %}
+        <label>Question {{counter}}</label>
+        <div class="list-group">
+            <a class="list-group-item disabled active">{{question.question}}</a>
+            <button type="button" value="1" name="answer{{question.id}}" class="list-group-item">{{question.answer1}}</button>
+            <button type="button" value="2" name="answer{{question.id}}" class="list-group-item">{{question.answer2}}</button>
+            <button type="button" value="3" name="answer{{question.id}}" class="list-group-item">{{question.answer3}}</button>
+            <button type="button" value="4" name="answer{{question.id}}" class="list-group-item">{{question.answer4}}</button>
+            <input type="text" id="answer{{question.id}}" name="answer{{question.id}}" value="" style="visibility:hidden" >
+            {% set counter = counter + 1 %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <input type="submit" name="action" class="btn btn-primary" value="Confirm answers">
+</form>
+{% endblock %}
